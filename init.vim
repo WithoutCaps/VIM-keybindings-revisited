@@ -20,6 +20,10 @@ set tabstop=4
 
 let mapleader=" "
 
+" Clear highlight
+map <leader>/ :noh<cr>
+
+
 " Ctrl + hjkl - in insert to move between characters
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
