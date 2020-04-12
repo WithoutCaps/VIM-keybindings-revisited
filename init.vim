@@ -71,6 +71,9 @@ imap <C-V> <Esc>"+pa
 nmap <C-s> :w<cr>
 imap <C-s> <esc>:w<cr>a
 
+" Ctrl+Backspace to delete previous word. https://vi.stackexchange.com/questions/16139/s-bs-and-c-bs-mappings-not-working
+imap <C-BS> <C-W>
+
 " Back to normal mode on focus lost 
 autocmd FocusLost * stopinsert | wall!
 
