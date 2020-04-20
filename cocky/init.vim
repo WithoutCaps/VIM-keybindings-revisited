@@ -1,7 +1,5 @@
-set termguicolors
 let g:webdevicons_enable = 1
 let g:WebDevIconsUnicodeDecorateFileNodes = 1
-"let g:coc_config_home = "./cocky/"
 
 
 
@@ -36,55 +34,6 @@ let g:coc_global_extensions = [
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 nmap <space>e :CocCommand explorer<CR>
-let mapleader=" "
-
-" Common
-set number
-set scrolloff=15
-set mouse=a
-set smartcase ignorecase
-set splitbelow splitright
-set visualbell
-set wildignore+=*/tmp/*,*.so,*.swp,*.pyc,*.db,*.sqlite
-
-" Indentation
-set smartindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-
-" Q to record macro
-nnoremap Q q
-
-" q to quit
-nnoremap q :q<cr>
-
-" Tabs switching
-noremap > gt
-noremap < gT
-
-" Arrows
-nmap <C-j> <C-w>j
-inoremap <C-j> <Down>
-nmap <C-k> <C-w>k
-inoremap <C-k> <Up>
-nmap <C-l> <C-w>l
-inoremap <C-l> <Right>
-nmap <C-h> <C-w>h
-inoremap <C-h> <Left>
-
-" Ctrl+C to copy
-nmap <C-C> "+yy
-vmap <C-C> "+y
-
-" Ctrl+V to paste
-imap <C-V> <Esc>"+pa
-
-" Ctrl+S to save
-nmap <C-s> :w<cr>
-imap <C-s> <esc>:w<cr>a
-
-
 
 
 " Remap for do codeAction of selected region
@@ -216,37 +165,3 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 let g:term_buf = 0
 let g:term_win = 0
-
-function! TermToggle(height)
-    if win_gotoid(g:term_win)
-        hide
-    else
-        botright new
-        exec "resize " . a:height
-        try
-            exec "buffer " . g:term_buf
-        catch
-            call termopen($SHELL, {"detach": 0})
-            let g:term_buf = bufnr("")
-            set nonumber
-            set norelativenumber
-            set signcolumn=no
-        endtry
-        startinsert!
-        let g:term_win = win_getid()
-    endif
-endfunction
-
-" Toggle terminal on/off (neovim)
-nnoremap <leader>t :call TermToggle(12)<CR>
-
-" Terminal go back to normal mode
-tnoremap <Esc> <C-\><C-n>
-tnoremap :q! <C-\><C-n>:q!<CR>
-
-" Terminal splits
-tmap <C-j> <C-w>j
-tmap <C-k> <C-w>k
-tmap <C-l> <C-w>l
-tmap <C-h> <C-w>h
-
