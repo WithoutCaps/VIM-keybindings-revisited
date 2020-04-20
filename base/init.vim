@@ -8,6 +8,7 @@ set scrolloff=15
 set smartcase ignorecase hlsearch
 set splitbelow splitright
 set termguicolors
+set undofile
 set visualbell
 set wildignore+=*/tmp/*,*.so,*.swp,*.pyc,*.db,*.sqlite,*.class,*/node_modules/*,*/.git/*
 
